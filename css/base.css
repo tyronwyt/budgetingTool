@@ -11,10 +11,20 @@ body {
   background-color: #f2f2f2;
   color: #392a2d;
   padding: 0px;
+  height: 100%;
 }
 
 h1 {
   font-weight: bold;
+}
+
+a {
+  color: #392a2d;
+}
+
+a:hover {
+  color: #038e87;
+  text-decoration: none;
 }
 
 a:link {
@@ -49,7 +59,6 @@ a:link {
 
 .header {
   background: #11d1c8;
-  height: 120px;
   color: #fff;
   padding: 20px;
   margin-bottom: 20px;
@@ -76,4 +85,17 @@ form {
   border-top: 1px solid #11d1c8;
   margin-top: 20px;
   padding-top: 20px;
+}
+
+.main {
+  padding-bottom: 20px;
+  min-height: 500px;
+}
+
+.footer {
+  margin-bottom: 50px;
+}
+
+.hide {
+  display: none;
 }

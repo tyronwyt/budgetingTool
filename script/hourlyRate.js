@@ -41,7 +41,9 @@ var expenseCalc = {
     var nForm = $('<div>').attr('class', 'form-group');
     nForm.append('<input type="text" class="form-control expenseLabel" data-index="'+ this.outgoingID +'" placeholder="Expense name">');
     nForm.append('<input type="number" class="form-control" data-index="'+ this.outgoingID +'" id="" placeholder="Amount">');
-      this.$outgoingSection.append(nForm);
+    $(nForm).hide().appendTo($('#outgoings')).fadeIn();
+
+      // this.$outgoingSection.append(nForm).slideDown();
       $('.expenseLabel').focus();
       this.outgoingID += 1;
   },
