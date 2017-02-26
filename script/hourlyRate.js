@@ -17,7 +17,7 @@ var expenseCalc = {
     this.$hoursWorked = this.$main.find('#inputHpweek');
     this.$rate = this.$main.find('#inputRate');
     this.$cost = this.$main.find('#inputCost');
-    this.$btnCalc = this.$main.find('#btnCalc');
+    // this.$btnCalc = this.$main.find('#btnCalc');
     this.$earningsW = this.$main.find('#outputWEarnings');
     this.$earningsY = this.$main.find('#outputYEarnings');
     this.$costPct = this.$main.find('#outputCost');
@@ -29,10 +29,11 @@ var expenseCalc = {
 
   //Event binding
   bindEvents: function() {
-    this.$btnCalc.on('click', this.calcExpenses.bind(this));
+    // this.$btnCalc.on('click', this.calcExpenses.bind(this));
     this.$addForm.on('click', this.addForm.bind(this));
     this.$main.on('blur', '.expenseLabel', this.newLabel.bind(this));
     this.$main.on('focusin', '.labelDone', this.editLabel.bind(this));
+    this.$main.on('blur', 'input', this.calcExpenses.bind(this));
   },
 
   // Add a new Expense form on button click
