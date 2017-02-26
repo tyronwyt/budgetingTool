@@ -79,16 +79,28 @@ var expenseCalc = {
   // use chart.js to render chart with input variables
   renderChart: function() {
 
+    Array.prototype.insert = function (index, item) {
+  this.splice(index, 0, item);
+};
+
 
     var label = [];
     var data = [];
     var income = [parseInt($("#inputRate").val())];
+    var totalExpense = [];
+    var expensesCount = 0;
+
+// can be refactored
 
     this.outgoingArr.forEach(function(item) {
       label.push(item.name);
       data.push(item.amount);
+      if (item.amount != ""){
+      expensesCount += parseInt(item.amount);
+    };
     });
-
+    label.insert(1, 'Total Expenses');
+    data.insert(1, (expensesCount-income));
     var ctx = document.getElementById("myChart");
 
     if (this.myChart != ""){
@@ -168,6 +180,21 @@ var expenseCalc = {
                 ],
                 borderWidth: 1
             },
+            // {
+            //     label: 'Total Expense',
+            //     data: [expensesCount],
+            //     backgroundColor: [
+            //
+            //         'rgba(255, 99, 132, 0.2)',
+            //
+            //     ],
+            //     borderColor: [
+            //
+            //         'rgba(255,99,132,1)',
+            //
+            //     ],
+            //     borderWidth: 1
+            // }
           ],
         },
         options: {
