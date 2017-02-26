@@ -9,6 +9,7 @@ var expenseCalc = {
   init: function() {
     this.cacheDom();
     this.bindEvents();
+    this.renderChart();
   },
 
    //Cache the Dom
@@ -115,6 +116,18 @@ var expenseCalc = {
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
                     // 'rgba(54, 162, 235, 0.2)',
                     // 'rgba(255, 206, 86, 0.2)',
                     // 'rgba(153, 102, 255, 0.2)',
@@ -125,6 +138,16 @@ var expenseCalc = {
                 ],
                 borderColor: [
                     'rgba(75, 192, 192, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(255,99,132,1)',
                     'rgba(255,99,132,1)',
                     'rgba(255,99,132,1)',
                     'rgba(255,99,132,1)',
@@ -159,7 +182,7 @@ var expenseCalc = {
     });
   }
 
-
+// Hourly Rate Calculator for future use
   //Calculate the rates once user clicks calculate
   // rateCalc: function() {
   //   var hours = this.$hoursWorked.val();
