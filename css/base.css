@@ -99,3 +99,20 @@ form {
 .hide {
   display: none;
 }
+
+.alert-success {
+  color: #2f8e8e;
+  background-color: rgba(75, 192, 192, 0.2);
+  border-color: #4bc0c0;
+}
+
+.alert-danger {
+  color: #9c3a4f;
+  background-color: rgba(255, 99, 132, 0.2);
+  border-color: #ff6384;
+}
+
+#total {
+  font-size: 18px;
+  font-weight: bold;
+}

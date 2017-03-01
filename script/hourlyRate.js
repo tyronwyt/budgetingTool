@@ -26,6 +26,7 @@ var expenseCalc = {
     this.$outgoingSection = this.$main.find('#outgoings');
     this.$addForm = this.$main.find('#addInput');
     this.$eLabel = this.$main.find('.expenseLabel');
+    this.$totalOutput = this.$main.find('#total');
   },
 
   //Event binding
@@ -73,7 +74,22 @@ var expenseCalc = {
 
     }
     this.outgoingArr = expenceArr;
+
     this.renderChart();
+  },
+
+  countTotal: function(income, expenses) {
+    var total = 0;
+    if (income && expenses > 0){
+    if (income < expenses) {
+      total = expenses - income;
+      this.$totalOutput.text("You are in a deficit of: " + total).removeClass().addClass('alert alert-danger');
+
+    } else {
+      total = income - expenses;
+      this.$totalOutput.text("You have a surplus of: " + total).removeClass().addClass('alert alert-success');
+    };
+  };
   },
 
   // use chart.js to render chart with input variables
@@ -86,7 +102,7 @@ var expenseCalc = {
 
     var label = [];
     var data = [];
-    var income = [parseInt($("#inputRate").val())];
+    var income = [parseFloat($("#inputRate").val())];
     var totalExpense = [];
     var expensesCount = 0;
 
@@ -96,7 +112,7 @@ var expenseCalc = {
       label.push(item.name);
       data.push(item.amount);
       if (item.amount != ""){
-      expensesCount += parseInt(item.amount);
+      expensesCount += parseFloat(item.amount);
     };
     });
     label.insert(1, 'Total Expenses');
@@ -106,6 +122,8 @@ var expenseCalc = {
     if (this.myChart != ""){
       this.myChart.destroy();
     }
+
+    this.countTotal(income, (expensesCount-income));
 
     this.myChart = new Chart(ctx, {
         type: 'bar',
